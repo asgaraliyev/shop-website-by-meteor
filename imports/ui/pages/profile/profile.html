@@ -1,0 +1,15 @@
+<template name="profile">
+    <h1>{{getUser.username}}</h1>
+    {{#if isCurrentUser}}
+    <form>
+        <ul class="list-group">
+            <li class="list-group-item"> <a href="/add-product"><button class="btn btn-success" type="button">{{_ "Add Product"}}</button></a>
+            </li>
+            <li class="list-group-item"> <button id="log-out" class="btn btn-danger" type="button">{{_ "Logout"}}</button>
+            </li>
+        </ul>
+    </form>
+    {{/if}}
+    {{> productlist}}
+
+</template>

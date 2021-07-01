@@ -1,0 +1,19 @@
+#product {
+    .content {
+        max-width: 700px;
+    }
+    img {
+        max-width: 500px;
+        max-height: 500px;
+    }
+}
+
+#reviews {
+    width: 50vw;
+    .remove-review {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0%, -50%);
+    }
+}

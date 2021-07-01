@@ -1,0 +1,13 @@
+<template name="rating">
+    <div class="rating">
+        <span> Average Rating :</span>
+        {{#each stars}}
+        {{#if this}}
+        <span class="fa fa-star checked"></span>
+        {{else}}
+        <span class="fa fa-star"></span>
+        {{/if}}
+        {{/each}}
+        <span>({{number}})</span>
+    </div>
+</template>

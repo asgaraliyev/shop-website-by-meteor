@@ -1,0 +1,49 @@
+<template name="product">
+    {{#with getProduct}}
+
+    <h3>{{name}}</h3>
+
+    <div id="product" class="display-row">
+        <img src="{{getPhoto}}">
+
+        <div class="content">
+            <h4 class="text-danger">{{_ 'Price'}}:{{price}}$</h4>
+            {{#with getUser}}
+            <a href="/profile/{{_id}}" class="text-dark">
+                <h4>{{_ 'Owner'}}:{{username}}</h4>
+            </a>
+            {{/with}}
+            <p class="text-primary">{{description}}</p>
+        </div>
+    </div>
+    <br>
+    <br>
+    {{#if isReviewFormActive}}
+    {{> reviewform id=_id}}
+    {{/if}}
+    <div class="display-column">
+        {{#if currentUser}}
+        <button class="btn btn-success" id="leave-review">{{_ 'Leave Review'}}</button>
+        {{/if}}
+        <ul class="list-group" id="reviews">
+            <h3>{{_ 'Reviews & Ratings'}}</h3>
+            {{#each getReviews}}
+            <li class="list-group-item review-li">{{#with findUserById userId}} <span>
+                    <h3>{{username}}:</h3>
+                </span>
+                {{/with}}
+                <h6 class="left">{{review}}</h6>
+                <br>
+                <span class="left"> {{> rating number=stars}}</span>
+
+                <br>
+                <span class="left"> {{getTime createdAt}}</span>
+                {{#if isReviewOwner}}
+                <button class="btn btn-danger remove-review">{{_ 'Delete'}}</button>
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+    {{/with}}
+</template>

@@ -1,0 +1,42 @@
+<template name="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/home">
+            <span style="font-size:2em; color:#e64c34;">ə</span>
+            <span style="font-size:2em; color:#0064d3;">B</span>
+            <span style="font-size:2em; color:#f5b311;">a</span>
+            <span style="font-size:2em; color:#87b910;">y</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <!-- <a class="nav-item nav-link active" href="/home">Home</a> -->
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse">
+            <form class="form-inline my-2 my-lg-0" id="search-form">
+                <input class="form-control mr-sm-2" type="search" name="data" style="float: left;
+                width: min-content;" placeholder="{{_ 'Search'}}" aria-label="{{_ 'Search'}}">
+                <button class="btn btn-success my-2 my-sm-0" type="submit">{{_ 'Search'}}</button>
+            </form>
+        </div>
+        <div class="left">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active">
+                    <select id="language" value="">
+                        <option value="az">az</option>
+                        <option value="en">en</option>
+                    </select>
+                </a>
+
+                {{#if currentUser}}
+                <a class="nav-item nav-link active" href="/favorites">{{_ "Favorites"}}</a>
+
+                <a class="nav-item nav-link active" href="/profile/{{currentUser._id}}">{{currentUser.username}}</a>
+                {{else}}
+                <a class="nav-item nav-link active" href="/sign-up">{{_ "Get Started"}}</a>
+                {{/if}}
+
+            </div>
+        </div>
+    </nav>
+</template>

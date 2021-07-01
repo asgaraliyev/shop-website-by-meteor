@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none!important;
+}
+
+.left {
+    float: left;
+    left: 0;
+}
+
+.right {
+    float: right;
+    right: 0;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+main {
+    margin: 1em;
+}
+
+.display-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.display-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rating {
+    .checked {
+        color: orange!important;
+    }
+}

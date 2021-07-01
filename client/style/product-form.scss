@@ -1,0 +1,9 @@
+#product-form {
+    min-width:50vw;
+    .form-control[name="description"]{
+        height:100px;
+    }
+    img {
+        max-width: 500px;
+    }
+}

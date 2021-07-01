@@ -1,0 +1,42 @@
+<template name="productlist">
+    <ul id="product-list" class="list-group">
+        {{> listnav}}
+        {{#each getProducts}}
+        <li class="list-group-item  ">
+            {{#if currentUser}}
+            <i class="fa fa-heart add-fav {{#if isInFav}}active{{/if}}" aria-hidden="true"></i>
+
+            {{/if}}
+            <!-- <img src="loading.webp"> -->
+            <a href="/product/{{_id}}">
+                <img src="{{findImageById imageId}}">
+                <div>
+                    <h5 class="text-primary">{{name}}</h5>
+                    {{> rating number=(averageStars _id)}}
+                    <h3 class="text-success">{{price}}$</h3>
+                </div>
+            </a>
+            {{#if isCurrentUser}}
+            <div class="product-nav">
+                <button class="btn btn-danger delete">{{_ 'Delete'}}</button>
+                <a href="/edit/{{_id}}"> <button class="btn btn-warning">{{_ 'Edit'}}</button></a>
+            </div>
+
+            {{/if}}
+        </li>
+        {{/each}}
+
+        {{#if isThereAnyProduct}}
+        <h3>No Product Found <img src="/not-found.svg" style="max-width:75px;"></h3>
+        {{/if}}
+
+    </ul>
+    <nav id="pagination">
+        <ul class="pagination">
+            {{#each getPages}}
+            <li class="page-item"><a class="page-link">{{this}}</a></li>
+            {{/each}}
+        </ul>
+    </nav>
+
+</template>

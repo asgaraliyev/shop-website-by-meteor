@@ -1,0 +1,15 @@
+<template name="listnav">
+    <div class="list-nav">
+        <span class="left">
+            <h3>{{_ "foundProduct" productCount=findProductCount}}</h3>
+        </span>
+        <span class="right">
+            <select id="filter" class="btn btn-dark">
+                <option value="newest">{{_ "newest"}}</option>
+                <option value="lowest">{{_ "lowest"}}</option>
+                <option value="highest">{{_ "highest"}}</option>
+                <option value="oldest">{{_ "oldest"}}</option>
+            </select>
+        </span>
+    </div>
+</template>
